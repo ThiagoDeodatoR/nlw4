@@ -51,6 +51,38 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-.countDownBtn:hover {
+.countDownBtn > i {
+    margin-left: 1rem;
+    transform: translateY(10%);
+}
+
+.countDownBtn:not(:disabled):hover {
     background-color: var(--blue-dark);
+}
+
+.countDownBtnAct {
+    background-color: var(--white);
+    color: var(--title);
+    transition: background-color 0.2 ease-in-out;
+}
+
+.countDownBtnAct:not(:disabled):hover {
+    background-color: var(--red);
+    color: var(--white)
+}
+
+.countDownBtn:disabled {
+    background-color: var(--white);
+    color: var(--text);
+    cursor: not-allowed;
+    border-bottom: 4px solid var(--green);
+}
+
+.countDownBtn:disabled > i {
+    width: 20px;
+    height: 20px;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 50%;
+    transform: translateY(0);
 }
