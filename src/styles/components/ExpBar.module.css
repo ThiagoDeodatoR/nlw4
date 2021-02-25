@@ -1,0 +1,29 @@
+.expBar {
+    display: flex;
+    align-items: center;
+}
+
+.expBar span {
+    font-size: 1rem;
+}
+
+.expBar > div {
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--gray-line); /* Color-Highlight não funcionando aqui */
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+.expProgression {
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--green);
+}
+
+.expCurrent {
+    position: absolute;
+    top: 12px;
+    transform: translateX(-50%);
+}
