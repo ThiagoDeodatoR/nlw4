@@ -1,13 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { ChallengesContext } from '../contexts/ChallengesContext';
+
 import {IoMdPlay} from 'react-icons/io';
 import {MdCheck} from 'react-icons/md';
 import {CgClose} from 'react-icons/cg';
+
 import styles from '../styles/components/Countdown.module.css';
 
+
+let countDownTimeOut : NodeJS.Timeout;
+
 const Countdown: React.FC = () => {
-
-    let countDownTimeOut : NodeJS.Timeout;
-
+    const { startNewChallenge } = useContext(ChallengesContext);
+    
     const [time, setTime] = useState(0.1 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
@@ -26,6 +31,7 @@ const Countdown: React.FC = () => {
         }else if (isActive && time == 0){
             setHasFinished(true);
             setIsActive(false);
+            startNewChallenge();
         }
     }, [isActive, time]) 
 
