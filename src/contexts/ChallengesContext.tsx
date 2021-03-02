@@ -61,8 +61,6 @@ export function ChallengesProvider ({ children, ...rest } : ChallengesProviderPr
 
         setChallengeAct(challenge);
 
-
-
         if(Notification.permission === 'granted') {
             new Audio('/notification.mp3').play();
             new Notification('Novo Desafio 🎉', {
